@@ -1482,6 +1482,35 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Getting Started with Speed Insights -->
+                <div class="page-card">
+                    <div class="page-header">
+                        <h3>Getting Started with Speed Insights</h3>
+                    </div>
+                    <div class="page-content">
+                        <div class="page-section">
+                            <h4>Enable Speed Insights in Vercel</h4>
+                            <p>Learn how to enable Vercel Speed Insights on your project dashboard and access the feature settings for performance monitoring.</p>
+                            <div class="page-link" data-modal="speed-insights">Read More <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="page-section">
+                            <h4>Install @vercel/speed-insights Package</h4>
+                            <p>Step-by-step guide to adding the Speed Insights package to your project using npm, yarn, pnpm, or bun package managers.</p>
+                            <div class="page-link" data-modal="speed-insights">Read More <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="page-section">
+                            <h4>Framework Integration</h4>
+                            <p>Detailed instructions for integrating Speed Insights with popular frameworks including Next.js, React, Vue, Nuxt, Remix, SvelteKit, and Astro.</p>
+                            <div class="page-link" data-modal="speed-insights">Read More <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="page-section">
+                            <h4>Deploy and Monitor</h4>
+                            <p>Deploy your app to Vercel's global CDN and start tracking performance metrics in real-time through the Speed Insights dashboard.</p>
+                            <div class="page-link" data-modal="speed-insights">Read More <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1642,6 +1671,7 @@
             { type: 'guide', title: 'Design Protection', content: 'Industrial design act, unregistered rights, fast-track registration.', modal: 'design-protection' },
             { type: 'guide', title: 'Agricultural IP', content: 'Plant variety protection, GI tags, traditional knowledge, seed patents.', modal: 'agricultural-ip' },
             { type: 'guide', title: 'Academic IP', content: 'Plagiarism vs copyright, pre-publishing patents, university rights.', modal: 'academic-ip' },
+            { type: 'guide', title: 'Getting Started with Speed Insights', content: 'Enable Speed Insights, install package, framework integration, deploy and monitor performance.', modal: 'speed-insights' },
             
             // Specific topics from pages
             { type: 'topic', title: 'Copyright Registration', content: 'Formal process of registering creative works with copyright offices.', modal: 'content-protection' },
@@ -1650,7 +1680,8 @@
             { type: 'topic', title: 'Trademark Search', content: 'How to conduct comprehensive trademark searches.', modal: 'brand-security' },
             { type: 'topic', title: 'Plant Variety Protection', content: 'Legal protection for new varieties of plants.', modal: 'agricultural-ip' },
             { type: 'topic', title: 'Plagiarism vs Copyright', content: 'Differences between academic plagiarism and copyright infringement.', modal: 'academic-ip' },
-            { type: 'topic', title: 'Fee Calculator', content: 'Calculate IP registration fees for different countries.', modal: 'calculator' }
+            { type: 'topic', title: 'Fee Calculator', content: 'Calculate IP registration fees for different countries.', modal: 'calculator' },
+            { type: 'topic', title: 'Speed Insights Setup', content: 'Getting started with Vercel Speed Insights for performance monitoring.', modal: 'speed-insights' }
         ];
 
         // Fee calculator data
@@ -1963,6 +1994,62 @@
                         <li><strong>Protection:</strong> Prevents misuse of the geographical name by producers outside the region</li>
                         <li><strong>Registration:</strong> Typically requires proof of link between product qualities and geographical origin</li>
                         <li><strong>International Protection:</strong> Protected through Lisbon Agreement and TRIPS Agreement</li>
+                    </ul>
+            },
+            'speed-insights': {
+                title: "Getting Started with Speed Insights",
+                content: `
+                    <h3>Enable Speed Insights in Vercel</h3>
+                    <p>Speed Insights is Vercel's performance monitoring solution that helps you track and optimize your website's performance. To get started:</p>
+                    <ol>
+                        <li>Navigate to your <strong>Vercel dashboard</strong></li>
+                        <li>Select your project</li>
+                        <li>Go to the <strong>Speed Insights</strong> tab</li>
+                        <li>Click <strong>Enable</strong> from the dialog</li>
+                    </ol>
+                    <p><strong>Note:</strong> Enabling Speed Insights will add new routes (scoped at <code>/_vercel/speed-insights/*</code>) after your next deployment.</p>
+                    
+                    <h3>Install the Package</h3>
+                    <p>Add the <code>@vercel/speed-insights</code> package to your project using your preferred package manager:</p>
+                    <ul>
+                        <li><strong>npm:</strong> <code>npm i @vercel/speed-insights</code></li>
+                        <li><strong>yarn:</strong> <code>yarn i @vercel/speed-insights</code></li>
+                        <li><strong>pnpm:</strong> <code>pnpm i @vercel/speed-insights</code></li>
+                        <li><strong>bun:</strong> <code>bun i @vercel/speed-insights</code></li>
+                    </ul>
+                    <p><strong>Note:</strong> For HTML implementations, there is no need to install the package.</p>
+                    
+                    <h3>Framework Integration</h3>
+                    <p>The integration process depends on your framework:</p>
+                    <ul>
+                        <li><strong>Next.js:</strong> Import and add the <code>&lt;SpeedInsights /&gt;</code> component from <code>@vercel/speed-insights/next</code></li>
+                        <li><strong>React/Create-React-App:</strong> Import from <code>@vercel/speed-insights/react</code></li>
+                        <li><strong>Vue/Nuxt:</strong> Import from <code>@vercel/speed-insights/vue</code></li>
+                        <li><strong>Remix:</strong> Import from <code>@vercel/speed-insights/remix</code></li>
+                        <li><strong>SvelteKit:</strong> Call <code>injectSpeedInsights()</code> from <code>@vercel/speed-insights/sveltekit</code></li>
+                        <li><strong>Astro:</strong> Import the component from <code>@vercel/speed-insights/astro</code></li>
+                        <li><strong>Other:</strong> Call <code>injectSpeedInsights()</code> from <code>@vercel/speed-insights</code></li>
+                    </ul>
+                    
+                    <h3>Deploy and Monitor</h3>
+                    <p>After configuration:</p>
+                    <ol>
+                        <li>Deploy your app to Vercel using <code>vercel deploy</code></li>
+                        <li>Or connect your Git repository for automatic deployments</li>
+                        <li>Once deployed, the tracking script (<code>/_vercel/speed-insights/script.js</code>) will be added to your page</li>
+                        <li>After users visit your site, you'll see performance metrics in the Speed Insights dashboard</li>
+                    </ol>
+                    
+                    <h3>Privacy and Compliance</h3>
+                    <p>Speed Insights respects privacy standards and allows you to customize data collection. You can implement a <code>speedInsightsBeforeSend</code> function to filter sensitive information before data is sent to Vercel.</p>
+                    
+                    <h3>Next Steps</h3>
+                    <p>Once your Speed Insights are set up, explore:</p>
+                    <ul>
+                        <li>Core Web Vitals metrics</li>
+                        <li>Real user monitoring (RUM) data</li>
+                        <li>Historical performance trends</li>
+                        <li>Privacy and data compliance policies</li>
                     </ul>
                 `
             }
